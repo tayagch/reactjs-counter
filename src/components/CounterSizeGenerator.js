@@ -17,14 +17,13 @@ class CounterSizeGenerator extends Component {
         }, () => this.props.onGenerate(value));
     }
 
-    
+
     render() {
         return (
             <fieldset>
                 <label htmlFor="size">size: </label>
                 <input type="number" name="size" id="size" value={this.state.size} onChange={this.onChange}/>
                 <br />
-                <label htmlFor="sum">Sum: </label>
             </fieldset>
         );
     }

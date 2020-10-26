@@ -18,10 +18,6 @@ class Counter extends Component {
         this.setState((prevState) => ({ number: prevState.number - 1 }), () => this.props.onChangeHandler(-1));
     }
 
-    onChange = () => {
-        console.log(this.state.number);
-    }
-
     render() {
         return (
             <section>

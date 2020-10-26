@@ -6,6 +6,9 @@ class CounterGroup extends Component {
         super(props);
 
         this.initArray = this.initArray.bind(this);
+        this.state ={
+            total:0
+        }
     }
 
     initArray(size) {
@@ -13,8 +16,8 @@ class CounterGroup extends Component {
         return Array.from(Array(number).keys());
     }
 
-    onPlus = (number) => {
-        console.log(number)
+    onChangeHandler = (number) => {
+        this.setState((prevState) => ({total: prevState.total + number}), () => this.props.onSum(this.state.total));
     }
 
     render() {
@@ -25,7 +28,7 @@ class CounterGroup extends Component {
             <div>
                 {
                     counterSizeArray.map((value) => (
-                        <Counter key={value} onPlus={this.onPlus} />
+                        <Counter key={value} onChangeHandler={this.onChangeHandler} />
                     ))
                 }
             </div>
